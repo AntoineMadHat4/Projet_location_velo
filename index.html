@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun'Cycle project</title>
+    <link rel="styleheet" href="public/css/main.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="public/images/favicon.jpg" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css'/>
+</head>
+<body>
+
+    <!-------------------------HEADER-------------------------->
+
+    <!-- Nav bar -->
+
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><img src="#" alt="logo"/></div>
+
+            <div class="timer">
+                <i class="#"><img src="#" alt="timer"/></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slider section -->
+
+        <!-- Slides -->
+        <section id="slider-container">
+            <div class="container-fluid slider">
+                    <div class="slideshow-item">
+                        <img  src="public/images/slide1.png" alt="">
+                        <div class="slideshow-item-text">
+                            <h1>LA LOCATION DE VÉLO EN LIBRE SERVICE</h1>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img  src="public/images/slide2.png" alt="">
+                        <div class="slideshow-item-text">
+                            <h2>SÉLECTIONNER LA STATION</h2>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img  src="public/images/slide3.png" alt="">
+                        <div class="slideshow-item-text">
+                            <h2>REMPLIR,SIGNER ET VALIDER LE FORMULAIRE</h2>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img  src="public/images/slide4.png" alt="">
+                        <div class="slideshow-item-text">
+                            <h2>TRANSACTION EFFECTUÉE ! TEMPS DE RÉSERVATION: 20 MIN</h2>
+                        </div>
+                    </div>    
+                    <div class="item">
+                        <img  src="public/images/slide5.png" alt="">
+                        <div class="slideshow-item-text">
+                            <h2>MODE D'EMPLOI</h2>
+                            <iframe width="930" height="523" src="https://www.youtube.com/embed/M-uldPeekkE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+        <!-- Button: next, previous, pause-->
+            <div class="button-item">
+                <button><i class="fas fa-chevron-circle-left"></i></button> 
+                <button><i class="fas fa-pause-circle"></i></button>
+                <button><i class="fas fa-chevron-circle-right"></i></button> 
+            </div>
+
+        <!-- Progress Bar -->
+            <div class="linetimer-container">
+                <div class="linetimer" data-percent="100%"></div>
+            </div>
+            
+        <!-- Dots -->
+            <div class="slider-dots">
+                <a href="#" class="dot1" title="firt slide"></a>
+                <a href="#" class="dot2" title="second slide"></a>
+                <a href="#" class="dot3" title="third slide"></a>
+                <a href="#" class="dot4" title="fourth slide"></a>
+                <a href="#" class="dot5" title="last slide"></a>
+            </div>    
+        </section>
+
+    <!---------------------------MAP--------------------------->
+        <section id="map-container">
+
+        <!-- Map card -->
+        <div id="map"></div> 
+
+        <!-- search station -->
+        <div class="search-container"> 
+                <h4>Recherche de station</h4>
+                <ul>
+                    <li>Vélos disponibles</li>
+                    <li>Vélos non disponibles</li>
+                </ul>
+            </div>
+
+        <!--info form  -->
+        <div class="station-infos">
+            <p>Adresse : </p>
+            <p>Nombre de places : </p>
+            <p>Nombre de vélos disponibles : </p>
+        </div>
+
+        <!-- booking form-->
+            <form id="form-bikes"> 
+                <fieldset>
+                    <legend>Réservation</legend>
+                    <label for="name">Nom : </label><input type="text" name="name" id="name" placeholder="nom" required/><br />
+                    <label for="firstname">Prénom : </label><input type="text" name="firstname" id="firstname" placeholder="prénom" required><br />
+                    <label for="phone">Téléphone : </label><input type="text" name="phone" id="phone" placeholder="téléphone" required/><br />
+                    <input type="submit" name="submit" id="reservation" value="Réserver">
+                </fieldset>
+            </form>
+        </div>
+
+        <!-- Canvas -->
+        <div class="canvas-container"> 
+            <div id="canvas-message">
+                <h4>Signer pour confirmer</h4>
+            </div>
+            <div id="canvas-div">
+                <canvas id="canvas_resa" width="200" height="200"></canvas>
+            </div>
+            <div id="canvas_confirm">
+                <button type="cancel" id="cancel-canvas">Annuler</button>
+                <button type="submit" id="submit-canvas">Valider</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- -->
+    <p id="form_confirm"> <span id="confirm_station">STATION</span> par <span id="confirm_name">NAME</span><br />
+        Temps restant : <span id="timer"></span> avant l'expiration de la session</p>
+    <p id="form_exp"></p>
+
+
+    <!-------------------------FOOTER-------------------------->
+    
+    <footer>
+        <span>Created By<a href="#"> V.Bora & A.Monga</a>  |  <span class="far fa-copyright"></span> 2021 All rights reserved.</span>
+    </footer>
+
+    <script src="public/js/app.js"></script>
+</body>
+</html>
